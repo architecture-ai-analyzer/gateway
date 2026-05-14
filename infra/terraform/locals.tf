@@ -7,7 +7,7 @@ locals {
 }
 
 locals {
-  kubernetes_state_path = "v4/kubernetes/${var.environment}/terraform.tfstate"
+  kubernetes_state_path = "v1/eks/${var.environment}/terraform.tfstate"
 }
 
 locals {
@@ -15,10 +15,10 @@ locals {
 }
 
 locals {
-  networking_state_path = "v4/networking/${var.environment}/terraform.tfstate"
+  networking_state_path = "v1/networking/${var.environment}/terraform.tfstate"
 }
 
 locals {
-  report_service_state_path = "v1/report/${var.environment}/terraform.tfstate"
+  report_service_state_path = "v1/report-service/${var.environment}/terraform.tfstate"
 }
 
