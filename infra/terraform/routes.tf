@@ -22,7 +22,7 @@ resource "aws_apigatewayv2_route" "report_get_status_by_id" {
   target    = "integrations/${aws_apigatewayv2_integration.report_backend.id}"
 }
 
-/*resource "aws_apigatewayv2_route" "report_download" {
+resource "aws_apigatewayv2_route" "report_download" {
   api_id    = aws_apigatewayv2_api.main_api.id
   route_key = "GET /api/reports/{uploadId}/download"
   target    = "integrations/${aws_apigatewayv2_integration.upload_backend.id}"
@@ -38,4 +38,4 @@ resource "aws_apigatewayv2_route" "upload_get_by_id" {
   api_id    = aws_apigatewayv2_api.main_api.id
   route_key = "GET /v1/uploads/{uploadId}"
   target    = "integrations/${aws_apigatewayv2_integration.upload_backend.id}"
-}*/
+}
