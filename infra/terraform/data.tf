@@ -1,7 +1,7 @@
 locals {
   report_lb_hostname = data.terraform_remote_state.report_service.outputs.loadbalancer_hostname
   report_lb_name = substr(split(".", local.report_lb_hostname)[0], 0, 32)
-  upload_lb_hostname = data.terraform_remote_state.report_service.outputs.loadbalancer_hostname
+  upload_lb_hostname = data.terraform_remote_state.upload_service.outputs.loadbalancer_hostname
   upload_lb_name = substr(split(".", local.upload_lb_hostname)[0], 0, 32)
 }
 

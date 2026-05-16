@@ -11,7 +11,7 @@ locals {
 }
 
 locals {
-  upload_service_state_path = "v1/service-upload/${var.environment}/terraform.tfstate"
+  upload_service_state_path = "v1/upload-service/${var.environment}/terraform.tfstate"
 }
 
 locals {
