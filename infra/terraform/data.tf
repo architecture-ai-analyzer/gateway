@@ -1,6 +1,8 @@
 locals {
-  report_lb_hostname = data.terraform_remote_state.report_service.outputs.challengeone_lb_hostname
+  report_lb_hostname = data.terraform_remote_state.report_service.outputs.loadbalancer_hostname
   report_lb_name = substr(split(".", local.report_lb_hostname)[0], 0, 32)
+  upload_lb_hostname = data.terraform_remote_state.upload_service.outputs.loadbalancer_hostname
+  upload_lb_name = substr(split(".", local.upload_lb_hostname)[0], 0, 32)
 }
 
 data "aws_lb" "report_lb" {
@@ -13,7 +15,7 @@ data "aws_lb_listener" "report_lb_listener_80" {
 }
 
 data "aws_lb" "upload_lb" {
-  name = data.terraform_remote_state.upload_service.outputs.upload_lb_name
+  name = local.upload_lb_name
 }
 
 data "aws_lb_listener" "upload_listener_80" {

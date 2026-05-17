@@ -35,7 +35,7 @@ jobs:
 
       - name: Terraform Gateway Init
         working-directory: ${{ env.TERRAFORM_API_GW_DIR }}
-        run: terraform init -backend-config="key=v4/api_gateway/${ENVIRONMENT}/terraform.tfstate"
+        run: terraform init -backend-config="key=v1/gateway/${ENVIRONMENT}/terraform.tfstate"
 
       - name: Terraform Gateway Apply
         working-directory: ${{ env.TERRAFORM_API_GW_DIR }}
