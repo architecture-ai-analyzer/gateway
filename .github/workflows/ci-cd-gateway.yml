@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - homologation
+      - feaure/testPipe
   workflow_dispatch:
 
 env:
