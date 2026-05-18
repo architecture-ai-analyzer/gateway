@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - homologation
+      - develop
   workflow_dispatch:
 
 env:
@@ -15,7 +16,7 @@ jobs:
   deploy-gateway:
     name: Deploy API Gateway
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name == 'main' && 'production' || (github.ref_name == 'homologation' && 'homologation' || 'dev') }}
+    environment: ${{ github.ref_name == 'main' && 'production' || (github.ref_name == 'homologation' && 'homologation' || 'develop') }}
 
     steps:
       - name: Checkout code
