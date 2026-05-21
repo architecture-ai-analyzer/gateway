@@ -28,6 +28,12 @@ resource "aws_apigatewayv2_route" "report_download" {
   target    = "integrations/${aws_apigatewayv2_integration.upload_backend.id}"
 }
 
+resource "aws_apigatewayv2_route" "upload_list" {
+  api_id    = aws_apigatewayv2_api.main_api.id
+  route_key = "GET /v1/uploads"
+  target    = "integrations/${aws_apigatewayv2_integration.upload_backend.id}"
+}
+
 resource "aws_apigatewayv2_route" "upload_file" {
   api_id    = aws_apigatewayv2_api.main_api.id
   route_key = "POST /v1/uploads"
